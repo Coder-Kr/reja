@@ -10,11 +10,16 @@ app.use(express.urlencoded({extended: true}));
 //Session
 //Views
 app.set('views', 'views');
-app.set('views engine', 'ejs');
+app.set('view engine', 'ejs');
 
 //Routing
 app.get('/', (req, res)=>{
-    res.end(`Hi, Wlecome to our homepage`);
+    res.render('harid');
+});
+
+app.post('/create-item', (req, res)=>{
+    console.log(req.body);
+    res.json({test: "success"});
 })
 
 
