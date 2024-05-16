@@ -5,7 +5,7 @@ const http = require("http");
 const fs = require("fs");
 
 let user;
-fs.readFile("database/user.json", 'utf-8', (err, data)=>{
+fs.readFile("database/user.json", 'utf8', (err, data)=>{
     if(err){
         console.log("ERROR", err);
     }else{
