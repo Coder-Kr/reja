@@ -1,36 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Reja</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css">
 </head>
+
 <body style="background-color: #b8bbd1;">
     <div class="container">
         <h1 class="display-4 text-center py-1">Reja va Maqsadlar</h1>
-        
+
         <div class="jumbotron p-3 shadow-sm">
             <form id="create-item" action="/create-item" method="post">
                 <div class="d-flex align-items-center">
-                    <input
-                        id="create-field"
-                        name="item"
-                        autofocus
-                        autocomplete="off"
-                        class="form-control mr-3"
-                        type="text"
-                        style="flex: 1;"
-                    />
-                    <button class="btn btn-primary" style="border-radius: 20px;">
-                        Yangi harid qushish
+                    <input id="create-field" name="item" autofocus autocomplete="off" class="form-control mr-3"
+                        type="text" style="flex: 1;" />
+                    <button class="btn btn-primary ms-4" style="border-radius: 20px;">
+                        Add new plan
                     </button>
                 </div>
             </form>
         </div>
+        <button class="btn btn-danger mt-4">Delete all plans</button>
     </div>
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.min.js"></script>
 </body>
+
 </html>
