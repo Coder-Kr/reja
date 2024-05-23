@@ -8,14 +8,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css">
 </head>
 
-<body style="background-color: #b8bbd1;">
+<body style="background-color: #d5d6e1;">
     <div class="container">
         <h1 class="display-4 text-center py-1">Reja va Maqsadlar</h1>
 
-        <div class="jumbotron p-3 shadow-sm">
+        <div class="jumbotron p-3 shadow-sm" style="background-color: #fff;">
             <form id="create-item" action="/create-item" method="post">
                 <div class="d-flex align-items-center">
-                    <input id="create-field" name="item" autofocus autocomplete="off" class="form-control mr-3"
+                    <input id="create-field" name="reja" autofocus autocomplete="off" class="form-control mr-3"
                         type="text" style="flex: 1;" />
                     <button class="btn btn-primary ms-4" style="border-radius: 20px;">
                         Add new plan
@@ -23,6 +23,19 @@
                 </div>
             </form>
         </div>
+        <ul id="item-list" class="list-group pb-5">
+            <%items.map((item)=>{%>
+                <li class="list-group-item list-group-item-info d-flex align-items-center justify-content-between ">
+                    <span class="item-text">
+                        <%=item.reja%>
+                    </span>
+                    <div>
+                        <button data-id="<%=item._id%>" class="edit-me btn btn-secondary btn-sm mr-1">Edit</button>
+                        <button data-id="<%=item._id%>" class="delete-me btn btn-danger btn-sm">Delete</button>
+                    </div>
+                </li>
+                <%})%>
+        </ul>
         <button class="btn btn-danger mt-4">Delete all plans</button>
     </div>
 

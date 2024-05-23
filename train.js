@@ -1,18 +1,48 @@
-// A-TASK:
-// Shunday 2 parametrli function tuzing, hamda birinchi parametrdagi letterni 
-// ikkinchi parametrdagi sozdan qatnashga sonini return qilishi kerak boladi.
-// MASALAN countLetter("e", "engineer") 3ni return qiladi.
-function countLetter(a, b) {
+// B-TASK: 
+
+// Shunday function tuzing, u 1ta string parametrga ega bolsin, hamda osha stringda qatnashgan raqamlarni sonini bizga return qilsin.
+// MASALAN countDigits("ad2a54y79wet0sfgb9") 7ni return qiladi.
+const validator = require("validator");
+function countDigits(s) {
     let total = 0;
-    for (let i of b) {
-        if (a == i) {
+    for (let value of s) {
+        if (validator.isInt(value)) {
             total++;
         }
     }
     return total;
-};
+}
+console.log(countDigits("ad2a54y79wet0sfgb9"));
 
-console.log(countLetter("e", "engineer"));
+// function countDigits(s) {
+//     let total = 0;
+//     for (let value of s) {
+//         for (let i = 0; i <= 9; i++) {
+//             if (value == i) {
+//                 total++;
+//             }
+//         }
+//     }
+//     return total;
+// }
+
+// console.log(countDigits("ad2a54y79wet0sfgb9"));
+
+// A-TASK:
+// Shunday 2 parametrli function tuzing, hamda birinchi parametrdagi letterni
+// ikkinchi parametrdagi sozdan qatnashga sonini return qilishi kerak boladi.
+// MASALAN countLetter("e", "engineer") 3ni return qiladi.
+// function countLetter(a, b) {
+//     let total = 0;
+//     for (let i of b) {
+//         if (a == i) {
+//             total++;
+//         }
+//     }
+//     return total;
+// };
+
+// console.log(countLetter("e", "engineer"));
 
 // console.log("Jack Ma Maslahatlari:");
 // const list = [

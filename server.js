@@ -1,18 +1,19 @@
 const http = require("http");
 const mongodb = require("mongodb");
 
-const connectionString = "mongodb://atlas-sql-664c19ae0d50c24ef678ca3b-9siwj.a.query.mongodb.net/Reja?ssl=true&authSource=admin";
+const connectionString = 'mongodb+srv://coderkrllc:UyCIrJE8p9jkWtHc@cluster0.bdiut4c.mongodb.net/Reja';
 
 mongodb.connect(
     connectionString,
     {
         useNewUrlParser: true,
-        UseUnifiedTopology: true,
+        useUnifiedTopology: true,
     },
     (err, client) => {
         if (err) console.log("Error connection MongoDB");
         else {
             console.log("MongoDB connection succeed");
+            // console.log(client);
             // console.log(client);
             module.exports = client;
             const app = require("./app");
