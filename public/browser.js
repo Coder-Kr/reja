@@ -30,3 +30,28 @@ document.getElementById("create-form")
                 console.log("Iltimos qaytadan harakat qiling");
             });
     });
+
+document.addEventListener('click', (e) => {
+    //delete operation
+    if (e.target.classList.contains('delete-me')) {
+        if (confirm("Are you sure to Delete?")) {
+            axios
+                .post("/delete-item", { id: e.target.getAttribute("data-id") })
+                .then((response) => {
+                    console.log(response.data);
+                    e.target.parentElement.parentElement.remove();
+                })
+                .catch((err) => {
+                    console.log("Iltimos qaytadan harakat qiling!");
+                });
+
+        }
+
+    }
+
+    //edit operation
+    if (e.target.classList.contains('edit-me')) {
+        alert("Edit pressed");
+    }
+
+})

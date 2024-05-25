@@ -6,6 +6,8 @@ const fs = require("fs");
 //mongodb ni choqirish
 const db = require("./server").db();
 
+const mongodb = require("mongodb");
+
 let user;
 fs.readFile("database/user.json", 'utf8', (err, data) => {
     if (err) {
@@ -54,6 +56,14 @@ app.post('/create-item', (req, res) => {
         console.log(data.ops);
         res.json(data.ops[0]);
     })
-})
+});
+
+app.post('/delete-item', (req, res) => {
+    const id = req.body.id;
+    db.collection("plans").deleteOne({ _id: new mongodb.ObjectId(id) }, (err, data) => {
+        res.json({ state: "succes" });
+    });
+
+});
 
 module.exports = app;
