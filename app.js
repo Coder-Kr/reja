@@ -66,4 +66,23 @@ app.post('/delete-item', (req, res) => {
 
 });
 
+app.post("/edit-item", (req, res) => {
+    const data = req.body;
+    console.log(data);
+    db.collection("plans").findOneAndUpdate(
+        { _id: new mongodb.ObjectId(data.id) },
+        { $set: { reja: data.new_input } },
+        function (err, data) {
+            res.json({ state: "success" });
+        });
+});
+
+app.post("/delete-all", (req, res) => {
+    if (req.body.delete_all) {
+        db.collection("plans").deleteMany(() => {
+            res.json({ state: "Deleted all plans" });
+        })
+    }
+})
+
 module.exports = app;
